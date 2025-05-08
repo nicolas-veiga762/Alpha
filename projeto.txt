@@ -20,29 +20,13 @@ void loop() {
     Serial.println(distancia);
     timer = millis();
 
-    if (distancia >= 101) {
+    if (distancia >= 151) {
       digitalWrite(buzzer, HIGH);
     } else {
-      int pwmValor = map(distancia, 0, 100, 255, 30);
+      int pwmValor = map(distancia, 150, 0, 255, 30);
       pwmValor = constrain(pwmValor, 0, 255);
       analogWrite(buzzer, pwmValor);
     }
-    // if (distancia <= 10) {
-    //   digitalWrite(6, LOW);
-    // } else {
-    //   digitalWrite(6, HIGH);
-    // }
   }
 
 }
-//     if (distancia > 100 || distancia == 0) {
-//       // Desliga o buzzer se estiver muito longe ou leitura inválida
-//       analogWrite(buzzer, 0);
-//     } else {
-//       // Mapeia a distância inversamente: 5 cm (máximo volume), 100 cm (mínimo audível)
-//       int pwmValor = map(distancia, 5, 100, 255, 30); // 30 é volume mínimo audível
-//       pwmValor = constrain(pwmValor, 0, 255); // Garante limite válido
-//       analogWrite(buzzer, pwmValor);
-//     }
-//   }
-// }
