@@ -14,7 +14,7 @@ void setup() {
   pinMode(pinBotaoEsquerdo, INPUT_PULLUP);
   pinMode(pinBotaoDireito, INPUT_PULLUP);
 
-  stepper.setMaxSpeed(1200);   // até 1500 pode funcionar, teste gradualmente
+  stepper.setMaxSpeed(1200);   // até 1500 pode funcionar, testar gradualmente
   stepper.setSpeed(0);
 
   Serial.begin(9600);
